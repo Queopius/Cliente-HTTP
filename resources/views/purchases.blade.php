@@ -9,7 +9,7 @@
     </div>
     <div class="row">
         @foreach($purchases as $purchase)
-            <div class="col-4">
+            <div class="col-3">
                 <a href="{{route('products.show', ['title' => $purchase->title, 'id' => $purchase->identifier])}}">
                     <div class="card">
                         <img src="{{$purchase->picture}}" class="card-img-top">
