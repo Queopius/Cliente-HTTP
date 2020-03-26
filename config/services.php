@@ -13,6 +13,13 @@ return [
     | to have a conventional place to find your various credentials.
     |
     */
+    'marketplace' => [
+        'base_uri' => env('MARKETPLACE_BASE_URI'),
+        'client_id' => env('MARKETPLACE_CLIENT_ID'),
+        'client_secret' => env('MARKETPLACE_CLIENT_SECRET'),
+        'password_client_id' => env('MARKETPLACE_PASSWORD_CLIENT_ID'),
+        'password_client_secret' => env('MARKETPLACE_PASSWORD_CLIENT_SECRET'),
+    ],
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
@@ -43,7 +50,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => App\User::class,
+        'model' => App\Models\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
         'webhook' => [

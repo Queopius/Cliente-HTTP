@@ -4,21 +4,23 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col">
-            <h2 class="display-2">Products</h2>
+            <h2>Products</h2>
         </div>
     </div>
     <div class="row">
         @foreach($products as $product)
-            <div class="col-4">
-                <a href="{{route('products.show', ['title' => $product->title, 'id' => $product->identifier])}}">
-                    <div class="card">
-                        <img src="{{$product->picture}}" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">{{$product->title}} ({{$product->stock}})</h5>
-                            <p class="card-text">{{$product->details}}</p>
+            <div class="col-md-3 p-2 offset-md-1 h-100">
+                <div class="card shadow">
+                    <a href="{{route('products.show', ['title' => $product->title, 'id' => $product->identifier])}}">
+                        <div class="card">
+                            <img src="{{$product->picture}}" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">{{$product->title}} ({{$product->stock}})</h5>
+                                <p class="card-text">{{ \Illuminate\Support\Str::limit($product->details, 10, '...') }}</p>
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
             </div>
         @endforeach
     </div>
