@@ -14,8 +14,6 @@ class CategoryProductController extends Controller
     {
         $products = $this->marketService->getCategoryProducts($id);
 
-        $products = $this->marketPlaceService->getCategoryProducts($id);
-
         return view('categories.products.show')->with([
             'products' => $products,
         ]);

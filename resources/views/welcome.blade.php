@@ -29,7 +29,7 @@
             </div>
             <div class="row">
                 @foreach($products as $product)
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 p-2 h-100">
                         <a href="{{ route('products.show', ['title' => $product->title, 'id' => $product->identifier]) }}">
                             <div class="card-deck">
                                 <div class="card shadow-sm w-100">
@@ -38,7 +38,7 @@
                                         <h5 class="card-title">{{ $product->title }} ({{ $product->stock }})</h5>
                                         <p class="card-text">
                                             <small class="text-muted">
-                                                {{ $product->details }}
+                                                {{ \Illuminate\Support\Str::limit($product->details, 50, '...') }}
                                             </small>
                                         </p>
                                     </div>

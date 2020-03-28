@@ -15,7 +15,7 @@
                         <img src="{{$publication->picture}}" class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title">{{$publication->title}} ({{$publication->stock}})</h5>
-                            <p class="card-text">{{$publication->details}}</p>
+                            <p class="card-text">{{ \Illuminate\Support\Str::limit($product->details, 50, '...') }}</p>
                         </div>
                     </div>
                 </a>
